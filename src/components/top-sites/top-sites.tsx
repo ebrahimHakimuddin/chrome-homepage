@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
+
 type TopSite = {
   url: string;
   title: string;
 };
 export default function TopSites() {
   const [topSites, setTopSites] = useState<TopSite[]>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchTopSites = async () => {
       try {
         const sites = await chrome.topSites.get();
-        console.log(sites);
+        // console.log(sites);
         setTopSites(sites);
         setLoading(false);
       } catch (err) {
@@ -79,7 +80,7 @@ export default function TopSites() {
                   title = item.title.substring(item.title.indexOf("-") + 2);
                 }
               } else if (item.title.includes("|")) {
-                console.log(Number(item.title.indexOf("|")));
+                // console.log(Number(item.title.indexOf("|")));
                 title = item.title.substring(0, item.title.indexOf("|"));
               } else {
                 title = item.title;
@@ -87,15 +88,15 @@ export default function TopSites() {
               return (
                 <div
                   title={item.title}
-                  className="col-span-1 flex flex-col h-[100px] border rounded-xl w-[100px] p-3 m-4 border-gray-400  cursor-pointer items-center justify-center"
+                  className="col-span-1 flex flex-col h-[125px] border rounded-xl w-[100px] p-3 m-4 border-gray-400  cursor-pointer items-center justify-center"
                   key={index}
                 >
                   <a href={item.url} className="flex flex-col items-center">
-                    <img
+                    {<img
                       src={`https://www.google.com/s2/favicons?domain=${item.url}&sz=256`}
                       alt={`${item.title} logo`}
                       className="rounded-full size-8 "
-                    />
+                    />}
                     <h1 className="text-center pt-2 line-clamp-2">{title}</h1>
                   </a>
                 </div>
