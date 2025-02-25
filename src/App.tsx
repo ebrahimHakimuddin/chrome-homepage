@@ -1,6 +1,6 @@
-import SearchBar from "./components/search-bar/search-bar";
+import LiveClockUpdate from "./components/clock/clock";
 import ToDo from "./components/to-do/to-do";
-
+import TopSites from "./components/top-sites/top-sites";
 
 function App() {
   return (
@@ -11,6 +11,10 @@ function App() {
         </div>
         <div className="col-span-4 flex justify-center ">
           {/* <SearchBar /> */}
+          <div className="flex flex-col">
+            <LiveClockUpdate />
+            <TopSites />
+          </div>
         </div>
         <div className="col-span-4 flex justify-center">
           <iframe
