@@ -19,7 +19,7 @@ function App() {
         <div className="col-span-4 flex justify-center">
           <iframe
             src="https://t3.chat/chat"
-            className="rounded-xl border border-gray-900 bg-[#191919] p-4 w-250 h-200"
+            className="rounded-xl border border-gray-900 bg-[#191919] p-4 w-[33dvw] h-[90dvh]"
           />
         </div>
       </div>
