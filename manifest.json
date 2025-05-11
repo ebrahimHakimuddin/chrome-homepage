@@ -1,10 +1,17 @@
 {
     "name":"Personal Homepage",
     "description":"A custom homepage for chrome made to my liking",
-    "version":"1.0",
-    "permissions": ["topSites"],
+"version":"1.1",
+    "permissions": ["topSites", "tabGroups","webRequest"],
     "manifest_version":3,
+    "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
     "chrome_url_overrides":{
         "newtab":"index.html"
+    },
+    "action":{
+        "default_popup":"popup.html"
     }
 }

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp popup.html manifest.json popup.css popup.js dist/",
     "lint": "eslint .",
     "preview": "vite preview"
   },

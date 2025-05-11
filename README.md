@@ -29,11 +29,8 @@
     ```
     pnpm run build
     ```
-- Copy manifest.json to dist folder
-    ```
-    cp manifest.json dist/
-    ```
+
 - Go to google chrome or any chromium-based browser and navigate to: `chrome://extensions`
 - On the Top Right you should see a "Load unpacked" button click on it and point it to the `dist/` folder you just made.
-  
 - If done correctly this should be your New Tab Page.
+- New Feature: You can now take a snapshot of the current open tabs (as a workspace) and save it to localstorage (as an alternative to tab groups and bookmarks) and then load them or delete as required much faster then managing bookmarks or creating tab groups(which do not persist) 
